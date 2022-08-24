@@ -10,8 +10,7 @@ st.write("""
 This app predicts the **Iris flower** type!
 """)
 from PIL import Image
-st.image("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png")
-st.image(image, caption='Iris Species Names')
+st.image("https://www.gardendesign.com/pictures/images/900x705Max/site_3/iris-louisiana-black-gamecock-iris-beardless-louisiana-iris-shutterstock-com_12592.jpg", caption='Credit to GardenDesign')
 
 st.sidebar.header('User Input Parameters')
 
