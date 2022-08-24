@@ -40,7 +40,8 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(iris.target_names)
+species_name = pd.dataframe(iris.target_names)
+st.write(species_name)
 
 st.subheader('Prediction')
 #st.write(iris.target_names[prediction])
@@ -48,3 +49,8 @@ st.write(prediction)
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+from PIL import Image
+image = Image.open('iris-machinelearning.png')
+
+st.image(image, caption='Iris Species Names')
