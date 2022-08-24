@@ -9,6 +9,10 @@ st.write("""
 
 This app predicts the **Iris flower** type!
 """)
+from PIL import Image
+image = Image.open('iris-machinelearning.png')
+
+st.image(image, caption='Iris Species Names')
 
 st.sidebar.header('User Input Parameters')
 
@@ -40,16 +44,16 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(pd.dataframe(iris.target_names))
+# list of strings
+lst = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+  
+# Calling DataFrame constructor on list
+df = pd.DataFrame(lst)
+st.write(df)
 
 st.subheader('Prediction')
-#st.write(iris.target_names[prediction])
-st.write(prediction)
+st.write(iris.target_names[prediction])
+#st.write(prediction)
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
-
-from PIL import Image
-image = Image.open('iris-machinelearning.png')
-
-st.image(image, caption='Iris Species Names')
